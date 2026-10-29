@@ -1,0 +1,146 @@
+/* Transiciones para las tres tarjetas */
+.tarjeta-rotar,
+.tarjeta-escalar,
+.tarjeta-mover {
+    transition: transform 0.5s ease;
+}
+
+/* Proyecto 1: Rotación */
+.tarjeta-rotar:hover {
+    transform: rotate(5deg);
+}
+
+/* Proyecto 2: Escalado */
+.tarjeta-escalar:hover {
+    transform: scale(1.08);
+}
+
+/* Proyecto 3: Traslación */
+.tarjeta-mover:hover {
+    transform: translateY(-15px);
+}
+
+
+/* Contenedor con perspectiva */
+.contenedor-3d {
+    perspective: 1000px;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+}
+
+/* Tarjeta tridimensional */
+.tarjeta-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+/* Rotación al pasar el mouse */
+.contenedor-3d:hover .tarjeta-3d {
+    transform: rotateX(10deg) rotateY(180deg);
+}
+
+/* Estilos de ambas caras */
+.cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Cara delantera */
+.frente {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Cara posterior */
+.reverso {
+    background-color: #28a745;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+/* Animación personalizada del título */
+.titulo-animado {
+    animation-name: aparecer;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+}
+
+/* Definición de la animación */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Animación de carga circular */
+.cargador {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #e0e0e0;
+    border-top: 6px solid #007bff;
+    border-radius: 50%;
+    margin-top: 20px;
+
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* Rotación continua del cargador */
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilos generales */
+body {
+    background-color: #f4f6f9;
+    color: #212529;
+}
+
+/* Tarjetas */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+section h2 {
+    font-weight: 600;
+    color: #212529;
+}
+
+/* Formulario de contacto */
+#contacto form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
